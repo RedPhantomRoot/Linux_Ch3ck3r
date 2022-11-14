@@ -33,7 +33,7 @@ echo -e "\n${ORANGE}[+]Checking network services running on the machine...${NC}\
 echo -e "\n${ORANGE}[+]Listing users with console...${NC}\n"
 cat /etc/passwd | grep "sh$"
 
-echo -e "\n${ORANGE}[+]Cheching path variable...${NC}\n"
+echo -e "\n${ORANGE}[+]Checking path variable...${NC}\n"
 echo $PATH
 
 echo -e "\n${ORANGE}[+]Checking history...${NC}\n"
