@@ -1,10 +1,8 @@
 # Linux_Checker
 
-[+] This is under development.
+[+] I'm adding new functions so stay tuned.
 
 You can run this script for linux privilege escalation when doing CTF.
-
-Be sure that I made this script for fun, so if you are serious about CTF, use better tools out there :)
 
 ### How to use
 
