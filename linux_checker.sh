@@ -75,6 +75,21 @@ find / -type f -iname ".*" -ls 2>/dev/null | grep /home/
 echo -e "\n${ORANGE}[+]Finding writable folder...${NC}\n"
 find / -type d -writable 2>/dev/null
 
+echo -e "\n${ORANGE}[+]Finding files owned by root, readable by me but not world readable...${NC}\n"
+VAR_FOLDER="/var"
+PROC_FOLDER="/proc"
+RUN_FOLDER="/run"
+SYS_FOLDER="/sys"
+FOLDER="/"
+
+files=$(find / -type f -user root ! -perm -o=r 2>/dev/null)
+for file in $files
+do
+if [[ "$file" != "$VAR_FOLDER"* && "$file" != "$PROC_FOLDER"* && "$file" != "$RUN_FOLDER"* && "$file" != "$SYS_FOLDER"* && "$file" == "$FOLDER"* ]];then
+echo $file
+fi
+done
+
 echo -e "\n${ORANGE}[+]Opening /etc/crontab...${NC}\n"
 cat /etc/crontab
 
